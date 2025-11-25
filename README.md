@@ -1,7 +1,6 @@
 # 📚 Full-Stack Book Library App
 
 A complete full-stack application for managing a personal book library. Browse 380+ books from Google Books API, save them to your library, create custom entries, and track your reading statistics.
-
 ---
 
 ## 🎯 Features

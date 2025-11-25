@@ -85,10 +85,74 @@ If you want to set up your own MongoDB Atlas database:
 
 - Node.js
 - Express.js
-- MongoDB
+- MongoDB Atlas (Cloud Database)
 - Mongoose
 - Axios
 - CORS
+- Render (Deployment Platform)
+
+## Deployment
+
+This backend is deployed on **Render** (cloud hosting platform).
+
+### Live API URL
+
+```
+https://fullstackbooklibraryapp.onrender.com
+```
+
+### Deployment Information
+
+- **Platform:** Render
+- **Environment:** Production
+- **Database:** MongoDB Atlas (Cluster0)
+- **Port:** Dynamic (assigned by Render, defaults to 10000)
+- **Environment Variables:** Set in Render dashboard
+
+### Accessing the Deployed API
+
+The API is accessible at:
+```
+https://fullstackbooklibraryapp.onrender.com/api/booklibrary
+```
+
+**Example Endpoints:**
+- `GET https://fullstackbooklibraryapp.onrender.com/api/booklibrary/pre-defined-books`
+- `GET https://fullstackbooklibraryapp.onrender.com/api/booklibrary/search?q=harry`
+- `POST https://fullstackbooklibraryapp.onrender.com/api/booklibrary/user-create-book`
+
+### How to Deploy to Render
+
+If you want to deploy your own version:
+
+1. **Push code to GitHub** (ensure `node_modules` and `.env` are in `.gitignore`)
+
+2. **Create a Render account** at [render.com](https://render.com)
+
+3. **Create a new Web Service:**
+   - Connect your GitHub repository
+   - Choose "Node" as environment
+   - Build Command: `npm install`
+   - Start Command: `node server.js`
+
+4. **Set Environment Variables** in Render dashboard:
+   ```
+   MONGO_URI=mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/initialbooksdata?retryWrites=true&w=majority
+   PORT=10000
+   ```
+
+5. **Deploy!** Render will automatically deploy on every push to main branch
+
+### Why Render?
+
+- ✅ **Free tier available** - Perfect for learning projects
+- ✅ **Auto-deployment** - Deploys automatically when you push to GitHub
+- ✅ **Easy setup** - No complex configuration needed
+- ✅ **HTTPS included** - Free SSL certificates
+- ✅ **Environment variables** - Secure configuration management
+- ✅ **Auto-scaling** - Handles traffic automatically
+
+**Note:** Render free tier services may spin down after 15 minutes of inactivity. First request might take 30-60 seconds to wake up the service.
 
 ## Author
 

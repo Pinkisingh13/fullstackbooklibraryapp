@@ -15,6 +15,16 @@ router.get("/pre-defined-books", async (req, res) => {
   res.json(preloadedbooks);
 });
 
+// Get all user's library books
+router.get("/user-library", async (req, res) => {
+  try {
+    const userBooks = await UserBookDetail.find();
+    res.json(userBooks);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 // Filter books by category
 router.get("/books-by-category/:category", async (req, res) => {
   try {

@@ -70,15 +70,15 @@ class _StatsScreenState extends State<StatsScreen> {
               padding: const EdgeInsets.all(16),
               children: [
                 // Header
-                const Text(
-                  '📚 My Library Overview',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 24),
+                // const Text(
+                //   '📚 My Library Overview',
+                //   style: TextStyle(
+                //     fontSize: 24,
+                //     fontWeight: FontWeight.bold,
+                //   ),
+                //   textAlign: TextAlign.center,
+                // ),
+                // const SizedBox(height: 24),
 
                 // Total Books Card
                 _buildStatCard(
@@ -110,7 +110,7 @@ class _StatsScreenState extends State<StatsScreen> {
 
                 // Book Sources
                 const Text(
-                  '📖 Book Sources',
+                  'Book Sources',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -148,7 +148,7 @@ class _StatsScreenState extends State<StatsScreen> {
                 // Reading Progress (if totalBooks > 0)
                 if (stats.totalBooks > 0) ...[
                   const Text(
-                    '📊 Reading Statistics',
+                    'Statistics ',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -160,11 +160,11 @@ class _StatsScreenState extends State<StatsScreen> {
                       padding: const EdgeInsets.all(16),
                       child: Column(
                         children: [
-                          _buildInfoRow(
-                            'Total Reading Time',
-                            _estimateReadingTime(stats.totalPages),
-                          ),
-                          const Divider(),
+                          // _buildInfoRow(
+                          //   'Total Reading Time',
+                          //   _estimateReadingTime(stats.totalPages),
+                          // ),
+                          // const Divider(),
                           _buildInfoRow(
                             'Average Book Length',
                             '${stats.avgPages.toStringAsFixed(0)} pages',
@@ -252,7 +252,7 @@ class _StatsScreenState extends State<StatsScreen> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            Icon(icon, size: 40, color: color),
+            // Icon(icon, size: 40, color: color),
             const SizedBox(height: 8),
             Text(
               title,

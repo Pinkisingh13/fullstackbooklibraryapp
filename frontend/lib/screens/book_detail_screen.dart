@@ -160,16 +160,16 @@ class BookDetailScreen extends StatelessWidget {
                           label: 'Pages',
                           value: book.pageCount.toString(),
                         ),
-                        const Divider(),
+                        // const Divider(),
                       ],
-                      if (book.googleId != null) ...[
-                        _buildDetailRow(
-                          icon: Icons.fingerprint,
-                          label: 'Google ID',
-                          value: book.googleId!,
-                        ),
-                        const Divider(),
-                      ],
+                      // if (book.googleId != null) ...[
+                      //   _buildDetailRow(
+                      //     icon: Icons.fingerprint,
+                      //     label: 'Google ID',
+                      //     value: book.googleId!,
+                      //   ),
+                      //   const Divider(),
+                      // ],
                       if (book.createdAt != null) ...[
                         _buildDetailRow(
                           icon: Icons.access_time,

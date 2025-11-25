@@ -1,6 +1,11 @@
+require('dotenv').config();
 const mongoose = require("mongoose");
 
-const userBookdbConnect = async () => { await mongoose.connect('mongodb://localhost/initialbooksdata').then(() => console.log("Connected to MongoDB...")).catch((err) => console.error("Could not connect to MongoDB...", err)) };
+const userBookdbConnect = async () => {
+  await mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log("Connected to MongoDB..."))
+    .catch((err) => console.error("Could not connect to MongoDB...", err))
+};
 
 
 const UserBookSchema = new mongoose.Schema({

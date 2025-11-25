@@ -11,6 +11,17 @@ A Node.js + Express + MongoDB backend for managing a personal book library.
 - ✅ User library management
 - ✅ Statistics/Aggregations
 - ✅ Data validation
+- ✅ MongoDB Atlas cloud database (Cluster0)
+
+## Database
+
+This project uses **MongoDB Atlas** (cloud database) instead of local MongoDB.
+
+- **Cluster:** Cluster0
+- **Database:** initialbooksdata
+- **Collections:**
+  - `initialbooks` - Pre-defined books from Google Books API
+  - `userbooks` - User's personal library
 
 ## Installation
 
@@ -26,21 +37,33 @@ npm install
 ```
 
 3. Create `.env` file
-```bash
-MONGO_URI=mongodb://localhost:27017/booklibrary
+
+Create a `.env` file in the `backend` folder with your MongoDB Atlas connection string:
+
+```env
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/initialbooksdata?retryWrites=true&w=majority
+PORT=8000
 ```
 
-4. Start MongoDB
-```bash
-mongod
-```
+**Note:** Replace `<username>` and `<password>` with your MongoDB Atlas credentials.
 
-5. Run the server
+4. Run the server
 ```bash
 node server.js
 ```
 
 Server will run on `http://localhost:8000`
+
+## MongoDB Atlas Setup
+
+If you want to set up your own MongoDB Atlas database:
+
+1. Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+2. Create a free account
+3. Create a new cluster (Cluster0)
+4. Create a database user (Database Access)
+5. Whitelist your IP address (Network Access)
+6. Get your connection string and add it to `.env`
 
 ## API Endpoints
 
